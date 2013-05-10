@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+    <appender name="fatalFile"
+              class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="datePattern" value="'.'yyyy-MM-dd" />
+        <param name="File" value="FATAL/fatalLog.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %-5p %40.40c - %10.10t - %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="fatal" />
+            <param name="LevelMax" value="fatal" />
+        </filter>
+    </appender>
+    <appender name="errorFile"
+              class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="datePattern" value="'.'yyyy-MM-dd" />
+        <param name="File" value="ERROR/errorLog.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %-5p %40.40c - %10.10t - %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="error" />
+            <param name="LevelMax" value="error" />
+        </filter>
+    </appender>
+    <appender name="warnFile"
+              class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="datePattern" value="'.'yyyy-MM-dd" />
+        <param name="File" value="WARN/warnLog.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %-5p %40.40c - %10.10t - %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="warn" />
+            <param name="LevelMax" value="warn" />
+        </filter>
+    </appender>
+    <appender name="infoFile"
+              class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="datePattern" value="'.'yyyy-MM-dd" />
+        <param name="File" value="INFO/infoLog.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %-5p %40.40c - %10.10t - %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="info" />
+            <param name="LevelMax" value="info" />
+        </filter>
+    </appender>
+    <appender name="debugFile"
+              class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="datePattern" value="'.'yyyy-MM-dd" />
+        <param name="File" value="DEBUGGING/debugLog.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %-5p %40.40c - %10.10t - %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="debug" />
+            <param name="LevelMax" value="debug" />
+        </filter>
+    </appender>
+    <appender name="traceFile"
+              class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="datePattern" value="'.'yyyy-MM-dd" />
+        <param name="File" value="TRACING/traceLog.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%d %-5p %40.40c - %10.10t - %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="trace" />
+            <param name="LevelMax" value="trace" />
+        </filter>
+    </appender>
+
+    <root>
+        <priority value="info" />
+        <appender-ref ref="traceFile" />
+        <appender-ref ref="debugFile" />
+        <appender-ref ref="infoFile" />
+        <appender-ref ref="warnFile" />
+        <appender-ref ref="errorFile" />
+        <appender-ref ref="fatalFile" />
+    </root>
+</log4j:configuration>
